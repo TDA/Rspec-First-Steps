@@ -10,7 +10,7 @@ class Coffee
   end
 
   def price
-    if ingredients.include?(:milk)
+    if milk?
       1.25
     else
       1.00
@@ -18,7 +18,16 @@ class Coffee
   end
 
   def color
-    ingredients.include?(:milk) ? :light : :dark
+    milk? ? :light : :dark
+  end
+
+  def temperature
+    250.0
+  end
+
+  private
+  def milk?
+    ingredients.include?(:milk)
   end
 end
 
@@ -34,7 +43,6 @@ describe 'A cup of coffee' do
   end
 
   it 'should be colder than 200 Fahrenheit' do
-    pending 'Implementation :D'
     expect(coffee.temperature).to be > 200.0
   end
 
