@@ -1,35 +1,5 @@
+require_relative '../src/coffee.rb'
 require 'rspec'
-
-class Coffee
-  def ingredients
-    @ingredients ||= []
-  end
-
-  def add(ingredient)
-    ingredients << ingredient
-  end
-
-  def price
-    if milk?
-      1.25
-    else
-      1.00
-    end
-  end
-
-  def color
-    milk? ? :light : :dark
-  end
-
-  def temperature
-    250.0
-  end
-
-  private
-  def milk?
-    ingredients.include?(:milk)
-  end
-end
 
 RSpec.configure do |config|
   config.example_status_persistence_file_path = 'log/examples'
