@@ -8,11 +8,7 @@ class Coffee
   end
 
   def price
-    if milk?
-      1.25
-    else
-      1.00
-    end
+    milk? ? 1.25 : 1.00
   end
 
   def add(ingredient)
