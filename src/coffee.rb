@@ -1,6 +1,6 @@
 class Coffee
   def temperature
-    250.0
+    150.0
   end
 
   def color

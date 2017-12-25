@@ -13,7 +13,7 @@ describe 'A cup of coffee' do
   end
 
   it 'should be colder than 200 Fahrenheit' do
-    expect(coffee.temperature).to be > 200.0
+    expect(coffee.temperature).to be <= 200.0
   end
 
   context 'with milk' do
