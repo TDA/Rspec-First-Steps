@@ -16,7 +16,7 @@ module ExpenseTracker
     end
 
     def app
-      ExpenseTracker::API.new
+      ExpenseTracker::API.new(ledger: nil)
     end
 
     it 'records submitted expenses' do
