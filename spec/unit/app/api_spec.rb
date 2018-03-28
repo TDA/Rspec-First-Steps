@@ -3,11 +3,14 @@ require_relative '../../../app/api'
 require 'rack/test'
 
 module ExpenseTracker
-  RecordResult = Struct.new(:success?, :expense_id, :error_message)
   describe API do
     include Rack::Test::Methods
 
     let(:ledger) { instance_double('ExpenseTracker::Ledger') }
+
+    def parsed_response
+      JSON.parse(last_response.body)
+    end
 
     def app
       API.new(ledger: ledger)
@@ -26,7 +29,6 @@ module ExpenseTracker
         it 'returns the expense id' do
           post '/expenses', JSON.generate(expense)
 
-          parsed_response = JSON.parse(last_response.body)
           expect(parsed_response).to include('expense_id' => 417)
         end
 
@@ -49,7 +51,6 @@ module ExpenseTracker
         it 'returns an error message' do
           post '/expenses', JSON.generate(expense)
 
-          parsed_response = JSON.parse(last_response.body)
           expect(parsed_response).to include('error_message' => 'Incomplete expense')
         end
 
