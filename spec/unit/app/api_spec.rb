@@ -60,6 +60,24 @@ module ExpenseTracker
           expect(last_response.status).to eq(422)
         end
       end
+      end
+
+    describe 'GET /expenses' do
+      context 'when expenses exist on a given date' do
+        it 'returns the expense records as JSON' do
+        end
+
+        it 'responds with 200 (OK)' do
+        end
+      end
+
+      context 'when there are no expenses on a given date' do
+        it 'returns an empty array as JSON' do
+        end
+
+        it 'responds with 200 (OK)' do
+        end
+      end
     end
   end
 end
