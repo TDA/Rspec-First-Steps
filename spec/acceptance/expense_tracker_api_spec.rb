@@ -3,7 +3,7 @@ require 'json'
 require_relative '../../app/api'
 
 module ExpenseTracker
-  describe 'Expense Tracker API' do
+  describe 'Expense Tracker API', :db do
     include Rack::Test::Methods
 
     def post_expense(expense)
@@ -16,7 +16,7 @@ module ExpenseTracker
     end
 
     def app
-      ExpenseTracker::API.new(ledger: nil)
+      ExpenseTracker::API.new(ledger: Ledger.new)
     end
 
     it 'records submitted expenses' do
