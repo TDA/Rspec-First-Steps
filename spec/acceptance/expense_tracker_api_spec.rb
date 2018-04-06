@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rack/test'
 require 'json'
 require_relative '../../app/api'
@@ -22,28 +24,28 @@ module ExpenseTracker
     it 'records submitted expenses' do
       # JSON converts to string keyed hash, so can't use symbols
       post_expense(
-          'payee' => 'Starbucks',
-          'amount' => 5.75,
-          'date' => '2017-06-10'
+        'payee' => 'Starbucks',
+        'amount' => 5.75,
+        'date' => '2017-06-10'
       )
     end
 
     it 'retrieves the posted payments on a given date' do
       pending 'need the api for expenses'
       coffee = post_expense(
-          'payee' => 'Starbucks',
-          'amount' => 5.75,
-          'date' => '2017-06-10'
+        'payee' => 'Starbucks',
+        'amount' => 5.75,
+        'date' => '2017-06-10'
       )
       zoo = post_expense(
-          'payee' => 'Zoo',
-          'amount' => 15.25,
-          'date' => '2017-06-10'
+        'payee' => 'Zoo',
+        'amount' => 15.25,
+        'date' => '2017-06-10'
       )
       grocery = post_expense(
-          'payee' => 'Whole Foods LOL',
-          'amount' => 95.25,
-          'date' => '2017-06-11'
+        'payee' => 'Whole Foods LOL',
+        'amount' => 95.25,
+        'date' => '2017-06-11'
       )
 
       get '/expenses/2017-06-10'
