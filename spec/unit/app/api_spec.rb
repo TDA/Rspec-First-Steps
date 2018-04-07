@@ -70,7 +70,7 @@ module ExpenseTracker
           allow(ledger)
             .to receive(:expenses_on)
             .with('2017-06-12')
-            .and_return(JSON.generate(expense))
+            .and_return(expense)
         end
 
         it 'returns the expense records as JSON' do
@@ -91,7 +91,7 @@ module ExpenseTracker
           allow(ledger)
             .to receive(:expenses_on)
             .with('2017-06-14')
-            .and_return(JSON.generate([]))
+            .and_return([])
         end
 
         it 'returns an empty array as JSON' do

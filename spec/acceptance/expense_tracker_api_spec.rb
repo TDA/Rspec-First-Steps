@@ -31,7 +31,6 @@ module ExpenseTracker
     end
 
     it 'retrieves the posted payments on a given date' do
-      pending 'need the api for expenses'
       coffee = post_expense(
         'payee' => 'Starbucks',
         'amount' => 5.75,
@@ -49,6 +48,7 @@ module ExpenseTracker
       )
 
       get '/expenses/2017-06-10'
+      puts "Body #{last_response.body}"
       expect(last_response.status).to eq(200)
       expenses = JSON.parse(last_response.body)
       expect(expenses).to contain_exactly(coffee, zoo)

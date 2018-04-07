@@ -2,7 +2,6 @@
 
 require 'rspec'
 require_relative '../../../app/ledger'
-require_relative '../../../config/sequel'
 
 module ExpenseTracker
   describe Ledger, :aggregate_failures, :db do
