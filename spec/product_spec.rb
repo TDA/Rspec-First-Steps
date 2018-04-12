@@ -1,4 +1,5 @@
 require 'rspec'
+require_relative 'support/product_shared_examples'
 
 # Context: Assume each of these are different classes that need to be tested,
 # since they all have similar behavior and can be run against the same examples,
@@ -26,8 +27,7 @@ Milk = Struct.new(:cost, :quantity) do
 end
 
 describe 'Product Prices' do
-
   describe Sandwich do
-
+    it_behaves_like 'Product'
   end
 end
