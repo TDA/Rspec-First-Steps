@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 require 'rspec'
 require_relative 'support/product_shared_examples'
 
@@ -10,16 +12,19 @@ Sandwich = Struct.new(:cost, :quantity) do
     cost * quantity
   end
 end
+
 Coffee = Struct.new(:cost, :quantity) do
   def price
     cost * quantity
   end
 end
+
 Bread = Struct.new(:cost, :quantity) do
   def price
     cost * quantity
   end
 end
+
 Milk = Struct.new(:cost, :quantity) do
   def price
     cost * quantity
@@ -28,6 +33,18 @@ end
 
 describe 'Product Prices' do
   describe Sandwich do
-    it_behaves_like 'Product'
+    it_behaves_like 'Product', Sandwich.new(1, 2), 2
+  end
+
+  describe Coffee do
+    it_behaves_like 'Product', Coffee.new(5, 6), 30
+  end
+
+  describe Bread do
+    it_behaves_like 'Product', Bread.new(2, 11), 22
+  end
+
+  describe Milk do
+    it_behaves_like 'Product', Milk.new(3, 3), 9
   end
 end
