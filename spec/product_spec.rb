@@ -8,24 +8,44 @@ require_relative 'support/product_shared_examples'
 # we create a shared_example and run it against each of them.
 
 Sandwich = Struct.new(:cost, :quantity) do
+  def initialize(*)
+    super
+    self.quantity ||= 1
+  end
+
   def price
     cost * quantity
   end
 end
 
 Coffee = Struct.new(:cost, :quantity) do
+  def initialize(*)
+    super
+    self.quantity ||= 1
+  end
+
   def price
     cost * quantity
   end
 end
 
 Bread = Struct.new(:cost, :quantity) do
+  def initialize(*)
+    super
+    self.quantity ||= 1
+  end
+
   def price
     cost * quantity
   end
 end
 
 Milk = Struct.new(:cost, :quantity) do
+  def initialize(*)
+    super
+    self.quantity ||= 1
+  end
+
   def price
     cost * quantity
   end
