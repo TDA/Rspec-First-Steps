@@ -51,20 +51,20 @@ Milk = Struct.new(:cost, :quantity) do
   end
 end
 
-describe 'Product Prices' do
+describe 'Products' do
   describe Sandwich do
-    it_behaves_like 'Product', Sandwich.new(1, 2), 2
+    it_behaves_like 'Product', Sandwich
   end
 
   describe Coffee do
-    it_behaves_like 'Product', Coffee.new(5, 6), 30
+    it_behaves_like 'Product', Coffee
   end
 
   describe Bread do
-    it_behaves_like 'Product', Bread.new(2, 11), 22
+    it_behaves_like 'Product', Bread
   end
 
   describe Milk do
-    it_behaves_like 'Product', Milk.new(3, 3), 9
+    it_behaves_like 'Product', Milk
   end
 end
