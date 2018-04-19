@@ -1,13 +1,8 @@
 require 'rspec'
+require_relative 'support/uri_shared_examples'
 
 describe URI do
-  it 'parses the host' do
-    expect(URI.parse('http://foo.com/').host).to eq('foo.com')
-  end
-
-  it 'parses the port' do
-    expect(URI.parse('http://foo.com:9876/').port).to eq(9876)
-  end
+  it_behaves_like 'URI Parser', URI
 
   it 'defaults http port to 80' do
     expect(URI.parse('http://foo.com/').port).to eq(80)

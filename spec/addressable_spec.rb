@@ -1,14 +1,9 @@
 require 'rspec'
 require 'addressable/uri'
+require_relative 'support/uri_shared_examples'
 
 describe Addressable do
-  it 'parses the host' do
-    expect(Addressable::URI.parse('http://foo.com/').host).to eq('foo.com')
-  end
-
-  it 'parses the port' do
-    expect(Addressable::URI.parse('http://foo.com:9876/').port).to eq(9876)
-  end
+  it_behaves_like 'URI Parser', Addressable::URI
 
   it 'parses the scheme' do
     expect(Addressable::URI.parse('http://foo.com/').scheme).to eq('http')
