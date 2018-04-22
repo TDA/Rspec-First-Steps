@@ -101,4 +101,8 @@ RSpec.configure do |config|
   config.when_first_matching_example_defined(:db) do
     require_relative 'support/db'
   end
+
+  config.define_derived_metadata(file_path: /metadata/) do |meta|
+    meta[:furious] = true
+  end
 end
