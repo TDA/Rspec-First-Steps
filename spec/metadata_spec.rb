@@ -13,7 +13,7 @@ describe 'Metadata', :outer_group do
     end
   end
 
-  it 'should return metadata', :fast, :focus do |example|
+  it 'should return metadata', :fast do |example|
     pp example.metadata
     expect(example.metadata).to be_a_kind_of(Hash)
   end

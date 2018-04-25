@@ -18,7 +18,7 @@ Sandwich = Struct.new(:cost, :quantity) do
   end
 end
 
-Coffee = Struct.new(:cost, :quantity) do
+Toffee = Struct.new(:cost, :quantity) do
   def initialize(*)
     super
     self.quantity ||= 1
@@ -56,8 +56,8 @@ describe 'Products' do
     it_behaves_like 'Product', Sandwich
   end
 
-  describe Coffee do
-    it_behaves_like 'Product', Coffee
+  describe Toffee do
+    it_behaves_like 'Product', Toffee
   end
 
   describe Bread do
