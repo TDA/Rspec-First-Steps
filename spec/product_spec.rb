@@ -7,7 +7,7 @@ require_relative 'support/product_shared_examples'
 # since they all have similar behavior and can be run against the same examples,
 # we create a shared_example and run it against each of them.
 
-Sandwich = Struct.new(:cost, :quantity) do
+Sandweech = Struct.new(:cost, :quantity) do
   def initialize(*)
     super
     self.quantity ||= 1
@@ -52,8 +52,8 @@ Milk = Struct.new(:cost, :quantity) do
 end
 
 describe 'Products' do
-  describe Sandwich do
-    it_behaves_like 'Product', Sandwich
+  describe Sandweech do
+    it_behaves_like 'Product', Sandweech
   end
 
   describe Toffee do
