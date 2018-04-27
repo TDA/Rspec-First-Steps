@@ -7,8 +7,10 @@ git_source(:github) { |repo_name| "https://github.com/#{repo_name}" }
 # gem "rails"
 gem 'addressable', '2.5.2'
 gem 'coderay', '1.1.1'
+gem 'minitest', '~> 5.11', '>= 5.11.3'
 gem 'rack-test', '0.7.0'
 gem 'rspec', '3.6.0'
 gem 'sequel', '4.48.0'
 gem 'sinatra', '2.0.1'
 gem 'sqlite3', '1.3.11'
+gem 'wrong'

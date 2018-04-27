@@ -13,6 +13,7 @@
 # it.
 #
 # See http://rubydoc.info/gems/rspec-core/RSpec/Core/Configuration
+require 'wrong'
 ENV['RACK_ENV'] = 'test'
 RSpec.configure do |config|
   config.filter_gems_from_backtrace 'rack', 'rack-test', 'sequel', 'sinatra'
@@ -105,4 +106,6 @@ RSpec.configure do |config|
   config.define_derived_metadata(file_path: /metadata/) do |meta|
     meta[:furious] = true
   end
+
+  config.expect_with :minitest, :rspec, Wrong
 end
