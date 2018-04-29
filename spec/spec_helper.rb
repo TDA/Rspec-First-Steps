@@ -107,5 +107,5 @@ RSpec.configure do |config|
     meta[:furious] = true
   end
 
-  config.expect_with :minitest, :rspec, Wrong
+  config.expect_with Wrong, :minitest, :rspec
 end
